@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public int spawn_left = 5;
     public bool spawn_enemy = true;
+    public int spawn_limit;
+    public int spawn_left;
+
     private float spawner_cooldown__remaining;
     [SerializeField] private Transform spawner;
     [SerializeField] private float spawner_cooldown = 1;

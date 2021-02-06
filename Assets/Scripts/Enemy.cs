@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float speed = 10;
-    [SerializeField] float health;
+    public float health;
+    public float health_max = 10;
+    
+    Player player;
+    Transform target;
     [SerializeField] int damage;
-    [SerializeField] Transform target;
-    [SerializeField] Player player;
+    [SerializeField] float speed; 
+    [SerializeField] Transform coin;
+    [SerializeField] Transform enemy_pref;
     [SerializeField] SpriteRenderer enemy;
 
     void Start()
@@ -16,6 +20,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemy = GetComponent<SpriteRenderer>();
+        health = health_max;
     }
 
     void Update()
@@ -33,6 +38,7 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            Instantiate(coin, enemy_pref.position, enemy_pref.rotation);
             Destroy(gameObject);
         }
     }
@@ -46,7 +52,7 @@ public class Enemy : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            player.health -= damage;
+            player.Being_attacked(damage);
         }
     }
 }
