@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int wave;
+
     public float health;
     public float health_max = 10;
     
@@ -20,6 +22,7 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemy = GetComponent<SpriteRenderer>();
+        health_max = 10 + 5 * (wave - 1);
         health = health_max;
     }
 

@@ -8,10 +8,11 @@ public class Spawner : MonoBehaviour
     public int spawn_limit;
     public int spawn_left;
 
+    public Enemy enemy;
+
     private float spawner_cooldown__remaining;
     [SerializeField] private Transform spawner;
     [SerializeField] private float spawner_cooldown = 1;
-    [SerializeField] private Enemy enemy;
 
     void Start()
     {

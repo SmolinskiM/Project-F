@@ -11,6 +11,7 @@ public class Game_Controler : MonoBehaviour
     float free_time;
     float delta_time;
     [SerializeField] float free_time_remaining;
+    [SerializeField] Enemy enemy;
 
     [SerializeField] Spawner spawner_L;
     [SerializeField] Spawner spawner_R;
@@ -39,6 +40,8 @@ public class Game_Controler : MonoBehaviour
                 free_time_remaining = free_time;
                 is_enemy = true;
                 wave++;
+
+                enemy.wave = wave;
             }
             else
             {
