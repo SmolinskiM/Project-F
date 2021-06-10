@@ -58,13 +58,13 @@ public class Game_Controler : MonoBehaviour
     {
         if(!spawner_L.spawn_enemy && spawner_L.spawn_left == 0 && !spawner_R.spawn_enemy && spawner_R.spawn_left == 0)
         {
-            if(collision.tag == "Enemy")
+            if(collision.tag != "Enemy")
             {
-                is_enemy = true;
+                is_enemy = false;
             }
             else
             {
-                is_enemy = false;
+                is_enemy = true;
             }
         }
     }

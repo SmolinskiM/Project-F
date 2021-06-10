@@ -103,11 +103,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Ground")
         {
             is_ground = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Ground")
+        {
+            is_ground = false;
         }
     }
 
