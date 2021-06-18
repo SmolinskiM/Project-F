@@ -48,10 +48,14 @@ public class Enemy : MonoBehaviour
 
     public void Take_damage(float attack_damage)
     {
+        if (gameObject.name == "Enemy_Fly(Clone)")
+        {
+            health = 1;
+        }
         health -= attack_damage;
     }
 
-    void OnTriggerStay2D(Collider2D collider)
+    void OnCollisionStay2D(Collision2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {

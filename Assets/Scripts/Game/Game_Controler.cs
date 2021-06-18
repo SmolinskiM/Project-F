@@ -5,6 +5,7 @@ using UnityEngine;
 public class Game_Controler : MonoBehaviour
 {
     public int wave;
+    public int score = 0;
     public bool is_enemy;
     public bool shop_enable;
 
@@ -29,11 +30,9 @@ public class Game_Controler : MonoBehaviour
         {
             if (free_time_remaining <= 0)
             {
-                spawner_L.spawn_limit += 2;
                 spawner_L.spawn_left = spawner_L.spawn_limit;
                 spawner_L.spawn_enemy = true;
 
-                spawner_R.spawn_limit += 2;
                 spawner_R.spawn_left = spawner_R.spawn_limit;
                 spawner_R.spawn_enemy = true;
 

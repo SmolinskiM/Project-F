@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 508136306953712299}
   - component: {fileID: 6680664107359228402}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Coin_Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 7405527452448447078}
   - component: {fileID: 1298115601791008239}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 7682642217712447490}
   - component: {fileID: 1568265973499094331}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Action
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   off_set: {x: -2, y: 4, z: 0}
   imagine: {fileID: 6234718346851656326}
-  game_controler: {fileID: 0}
+  coin_Count: {fileID: 6680664107359228402}
 --- !u!61 &-5457502643181427322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 4856863198914876347}
   - component: {fileID: 7973612811692481757}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

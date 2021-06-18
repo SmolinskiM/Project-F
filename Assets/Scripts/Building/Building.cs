@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    public Transform building_this;
+    [SerializeField] Transform building_this;
 
-    public GameObject building_next;
+    [SerializeField] GameObject building_next;
 
     public int lvl;
 
     private bool buy = false;
 
     private Player player;
-    
+
+    Game_Controler game_controler;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        game_controler = GameObject.Find("Game_Controler").GetComponent<Game_Controler>();
     }
 
     void OnTriggerStay2D(Collider2D collider)
@@ -28,6 +30,7 @@ public class Building : MonoBehaviour
                 Instantiate(building_next, building_this.position, building_this.rotation);
                 buy = true;
                 player.coin -= 10 * lvl;
+                game_controler.score += 20 * lvl;
                 Destroy(this.gameObject);
             }
         }

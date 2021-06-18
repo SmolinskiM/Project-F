@@ -9,11 +9,13 @@ public class Building_UI : MonoBehaviour
 
     [SerializeField] Vector3 off_set;
     [SerializeField] Image imagine;
+    [SerializeField] Text coin_Count;
     private Game_Controler game_controler;
 
     void Start()
     {
         building = GetComponent<Building>();
+        coin_Count.text = "X " + building.lvl * 10;
         game_controler = GameObject.Find("Game_Controler").GetComponent<Game_Controler>();
     }
 
@@ -39,7 +41,6 @@ public class Building_UI : MonoBehaviour
         if (collider.gameObject.tag == "Player" || game_controler.is_enemy)
         {
             imagine.gameObject.SetActive(false);
-            imagine.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.transform.position + off_set);
         }
     }
 }
